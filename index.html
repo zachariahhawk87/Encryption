@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Encryption Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="crypto-js.min.js"></script>
+    <script src="qrcode.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        /* Additional CSS for hover effect */
+        #passphrase-display {
+            display: none;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="encryption-tool">
+        <h2>AES Encryption Tool</h2>
+        <p>Enter your passphrase and text, then click the respective button to encrypt or decrypt.</p>
+        
+        <!-- Key Strength Selection -->
+        <label for="keyStrength">Key Strength:</label>
+        <select id="keyStrength">
+            <option value="256" selected>256-bit</option>
+        </select>
+        
+        <!-- Passphrase Input Field with Hover Effect -->
+        <div>
+            <input type="password" id="passphrase" placeholder="Enter Passphrase">
+            <span id="passphrase-display"></span>
+        </div>
+        
+        <!-- Password Strength Meter -->
+        <div id="passwordStrengthMeter" style="height: 10px; width: 100%; background-color: #ccc;"></div>
+        <p id="passwordStrengthLabel">Password Strength: <span>Unknown</span></p>
+        
+        <textarea id="inputText" rows="4" placeholder="Enter text to encrypt or decrypt"></textarea>
+        
+        <button onclick="encryptText()">Encrypt</button>
+        <button onclick="decryptText()">Decrypt</button>
+        
+        <!-- Time-based Auto-deletion -->
+        <label for="autoDelete">Clear output after:</label>
+        <select id="autoDelete">
+            <option value="1">1 minute</option>
+            <option value="5">5 minutes</option>
+            <option value="10">10 minutes</option>
+            <option value="0" selected>Never</option>
+        </select>
+        
+        <div id="result">Result: 
+            <textarea id="output" rows="4" readonly></textarea>
+            <button onclick="copyToClipboard()">Copy</button>
+        </div>
+
+        <!-- QR Code Container -->
+        <div id="qrcode-container"></div>
+
+        <!-- Performance Metrics -->
+        <p id="performanceMetrics"></p>
+    </div>
+</body>
+</html>
+

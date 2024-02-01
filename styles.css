@@ -1,0 +1,105 @@
+/* Your existing CSS code */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #6C5B7B, #C06C84, #F67280);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Change 'height' to 'min-height' */
+    color: #333;
+}
+
+.encryption-tool {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 85%;
+    max-width: 550px;
+    text-align: center;
+    overflow: hidden; /* Add overflow property to enable scrolling */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+textarea, input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+    max-width: 100%; /* Allow text boxes to expand */
+}
+
+textarea:focus, input:focus, select:focus {
+    border-color: #30A7A3; /* Soft teal color for focus */
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
+
+button:not(.copy-btn) {
+    background-color: #30A7A3; /* Soft teal color */
+    color: #fff;
+    margin-right: 10px;
+}
+
+button:not(.copy-btn):hover {
+    background-color: #278582; /* Darker teal color for hover */
+}
+
+.copy-btn {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.copy-btn:hover {
+    background-color: #ddd;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#performanceMetrics {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Additional CSS for hover effect on passphrase input */
+#passphrase-display {
+    display: none;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Add this CSS to center the QR code within its container */
+#qrcode-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Adjust the margin as needed */
+}
